@@ -3,7 +3,7 @@
 const name = 'fatwa'
 const userAge = 16
 
-const user ={
+const user = {
     name,
     age: userAge,
     location: 'blitar'
@@ -13,7 +13,7 @@ console.log(user);
 
 //object destructuing 
 
-const product ={
+const product = {
     label: 'Red note',
     price: 3,
     stock: 201,
@@ -29,8 +29,8 @@ const product ={
 // console.log(stock);
 // console.log(rating);
 
-const transaction = (type , {label, stock})=>{
-    console.log(type, label , stock);
+const transaction = (type, { label, stock = 0 } = {}) => {
+    console.log(type, label, stock);
 }
 
 transaction('order', product)

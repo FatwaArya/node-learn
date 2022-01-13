@@ -21,7 +21,7 @@ hbs.registerPartials(partialPath)
 app.use(express.static(publicDirectoryPath))
 
 //
-app.get('', (reg, res) => {
+app.get('/', (reg, res) => {
     res.render('index', {
         title: 'Weather App',
         name: 'Fatwa Arya'
@@ -45,7 +45,7 @@ app.get('/weather', (req, res) => {
             error: 'Must provide an address'
         })
     }
-    geocode(req.query.address, (error, { latitude, longtitude, place_name }) => {
+    geocode(req.query.address, (error, { latitude, longtitude, place_name } = {}) => {
         if (error) {
             return res.send({ error })
         } forecast(latitude, longtitude, (error, forecastData) => {
