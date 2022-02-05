@@ -13,6 +13,48 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) =>
     }
 
     const db = client.db(databaseName)
+    //delete
+    // db.collection('users').deleteMany({
+    //     age: 17
+    // }).then((result) => {
+    //     console.log(result)
+    // }).catch((error) => {
+    //     console.log(error)
+    // })
+
+    db.collection('tasks').deleteOne({
+        description: "Clean the house"
+    }).then((result) => {
+        console.log(result)
+    }).catch((error) => {
+        console.log(error)
+    })
+
+
+    //updateOne document
+    // db.collection('users').updateOne({
+    //     _id: new ObjectId("61f654e3b7c0e1aff8b92ddc")
+    // }, {
+    //     $inc: {
+    //         age: 1
+    //     }
+    // }).then((result) => {
+    //     console.log(result)
+    // }).catch((error) => {
+    //     console.log(error)
+    // })
+
+    //updateMany for task set to be true   
+    // db.collection('tasks').updateMany(
+    //     { completed: false },
+    //     {
+    //         $set: {
+    //             completed: true
+    //         }
+    //     }
+    // ).then((result) => console.log(result))
+    //     .catch((error) => console.log(error))
+
 
     // db.collection('users').insertOne({
     //     _id: id,
@@ -76,18 +118,18 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) =>
     // });
 
     //user FindOne to fetch the last task by its id
-    db.collection('tasks').findOne({ _id: new ObjectId("61f7ee729398333d1ceec296") }, (error, task) => {
-        if (error) {
-            return console.log('Unable to find task')
-        }
-        console.log(task)
+    // db.collection('tasks').findOne({ _id: new ObjectId("61f7ee729398333d1ceec296") }, (error, task) => {
+    //     if (error) {
+    //         return console.log('Unable to find task')
+    //     }
+    //     console.log(task)
 
-    })
+    // })
 
-    db.collection('tasks').find({ completed: false }).toArray((error, tasks) => {
-        if (error) {
-            return console.log('Unable to find task')
-        }
-        console.log(tasks)
-    })
+    // db.collection('tasks').find({ completed: false }).toArray((error, tasks) => {
+    //     if (error) {
+    //         return console.log('Unable to find task')
+    //     }
+    //     console.log(tasks)
+    // })
 })
