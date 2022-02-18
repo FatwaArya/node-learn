@@ -1,0 +1,22 @@
+[{
+  "_id": {
+    "$oid": "62021117b62b9e7c33911a47"
+  },
+  "description": "Clean the house",
+  "completed": true,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "620472b4c35c159879d3b415"
+  },
+  "description": "Clean the house",
+  "completed": false,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6204acf6cb8b2330e3207ac1"
+  },
+  "description": "Belajar NodeJS",
+  "completed": false,
+  "__v": 0
+}]
