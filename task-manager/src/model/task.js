@@ -10,7 +10,7 @@ const taskSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
-    author:{
+    author: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
         ref: 'User'
