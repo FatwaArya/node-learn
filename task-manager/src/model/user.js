@@ -60,7 +60,6 @@ userSchema.virtual('tasks', {
     ref: 'Task',
     localField: '_id',
     foreignField: 'author'
-
 })
 
 userSchema.methods.toJSON = function () {
